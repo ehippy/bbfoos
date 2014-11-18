@@ -17,16 +17,19 @@ bbfoos is a scorekeeping application for BombBomb Foosball
 4. The following will boot your docker container, link it's /src dir with this dir, and give you a bash shell. (Windows fans replace `` `pwd` `` with your path, I bet):
 
 		docker run -d -p 3000:3000 -v `pwd`:/src bombbomb/bbfoos
-
-
-5. once inside your node container, run the following to install any node dependencies and start the node server:
-
-		npm install
-		nodemon server.js
 		
-6. Get your boot2docker's ip
+5. Get your boot2docker's ip
 
 		boot2docker ip
 		
-7. Point your browser at [http://boot2docker_ip:3000/]()
-8. When you change your code, enter `rs` into your node box to reload node :-\
+6. Point your browser at [http://boot2docker_ip:3000/]()
+7. When you change your code, enter `rs` into your node box to reload node :-\
+
+
+
+__todo__ 
+ - Link app container to mongo container
+ - Hook app up to mongo, prolly with [mongoose quickstart](http://mongoosejs.com/docs/index.html)
+ - Persist the mongo data volume?
+ - Figure configuration out
+ - Production environment
