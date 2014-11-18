@@ -1,11 +1,8 @@
 {
-    "name": "BBFoosball",
-    "version": "0.1.0",
-    "description": "Bombbomb Foosball Dev",
-    "dependencies": {
-        "connect-redis": "~1.4.5",
-        "express": "~3.3.3",
-        "hiredis": "~0.1.15",
-        "redis": "~0.8.4"
-    }
+  "name": "BBFoosball",
+  "version": "0.1.0",
+  "description": "Bombbomb Foosball Dev",
+  "dependencies": {
+    "express": "^3.3.8"
+  }
 }
