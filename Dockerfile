@@ -15,4 +15,7 @@ RUN     npm install -g nodemon
 
 EXPOSE 3000
 
-# CMD ["nodemon", "/src/server.js"]
+WORKDIR /src/
+
+CMD nodemon -L /src/server.js
+#CMD /bin/sh
