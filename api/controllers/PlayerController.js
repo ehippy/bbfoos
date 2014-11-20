@@ -9,9 +9,10 @@ module.exports = {
     vs: function (req, res) {
 
         return res.json({
-            player1:
+            player1: req.param('p1'),
+            player2: req.param('p2'),
+            winner: 'your mama'
         });
-        return res.send("Hi there, " + req.param('p1'));
     }
 };
 
