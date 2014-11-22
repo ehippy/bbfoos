@@ -1,0 +1,122 @@
+{
+  "data": {
+    "match": [],
+    "matchteam": [],
+    "player": [],
+    "match_teams__matchteam_match": [],
+    "matchteam_players__player_teams": []
+  },
+  "schema": {
+    "match": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "matchteam": {
+      "color": {
+        "type": "string",
+        "enum": [
+          "yellow",
+          "black"
+        ]
+      },
+      "score": {
+        "type": "integer"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "player": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "match_teams__matchteam_match": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "match_teams": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "match",
+        "on": "id",
+        "via": "matchteam_match"
+      },
+      "matchteam_match": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "matchteam",
+        "on": "id",
+        "via": "match_teams"
+      }
+    },
+    "matchteam_players__player_teams": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "matchteam_players": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "matchteam",
+        "on": "id",
+        "via": "player_teams"
+      },
+      "player_teams": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "player",
+        "on": "id",
+        "via": "matchteam_players"
+      }
+    }
+  },
+  "counters": {
+    "match": {},
+    "matchteam": {},
+    "player": {},
+    "matchteam_players__player_teams": {},
+    "match_teams__matchteam_match": {}
+  }
+}
