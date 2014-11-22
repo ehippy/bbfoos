@@ -17,32 +17,6 @@ module.exports = {
         var p1Team = req.param('p1team');
         var p2Team = req.param('p2team');
 
-
-        Match.create({}, function(err, match) {
-
-
-            MatchPlayer.create({
-                match: match.id,
-                player: p1Id,
-                score: p1Score,
-                team: p1Team
-            }, function(err, p1) {
-
-                MatchPlayer.create({
-                    match: match.id,
-                    player: p2Id,
-                    score: p2Score,
-                    team: p2Team
-                }, function(err, p2) {
-
-                    Match.findOne(match.id, function(err, match) {
-                       res.json(match);
-                    });
-
-                });
-            });
-
-        });
     }
 };
 

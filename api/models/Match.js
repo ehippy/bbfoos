@@ -8,8 +8,8 @@
 module.exports = {
 
   attributes: {
-    players: {
-        collection: 'MatchPlayer',
+    teams: {
+        collection: 'matchTeam',
         via: 'match'
     }
   }

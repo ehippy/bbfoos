@@ -18,9 +18,9 @@ module.exports = {
         required: true,
         unique: true
     },
-      matchPlayers: {
-          collection: 'matchPlayer',
-          via: 'player'
+      teams: {
+          collection: 'matchTeam',
+          via: 'players'
       }
   }
 };
